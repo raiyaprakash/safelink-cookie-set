@@ -27,7 +27,7 @@ export async function onRequestGet(context) {
           <title>Join Viewer</title>
           <meta charset="UTF-8" />
           <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
+            body,p { font-family: Arial, sans-serif; margin: 0;padding: 0; }
           </style>
         </head>
         <body>
