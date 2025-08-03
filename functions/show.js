@@ -140,21 +140,25 @@ function timer(timeset) {
         var next_status = cookie_step_id + 1;
         bpkc.set("upage_is", next_status, {
             secure: 1,
-            "max-age": 600
+            "max-age": 600,
+		sameSite: "None"
         });
 
         if (cookie_step_id + 1 >= StepsToGo) {
             bpkc.set("upage_is", 1, {
                 secure: 1,
-                "max-age": 0
+                "max-age": 0,
+		sameSite: "None"
             });
             bpkc.set("page_is", 1, {
                 secure: 1,
-                "max-age": 0
+                "max-age": 0,
+		sameSite: "None"
             });
             bpkc.set("user_id", 1, {
                 secure: 1,
-                "max-age": 0
+                "max-age": 0,
+		sameSite: "None"
             });
 
         }
