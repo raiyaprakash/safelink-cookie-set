@@ -136,6 +136,7 @@ function timer(timeset) {
 
     function savecookie() {
         var cookie_step_id = Number(bpkc.get("upage_is"));
+	var StepsToGo = Number(bpkc.get("page_is"));
         var next_status = cookie_step_id + 1;
         bpkc.set("upage_is", next_status, {
             secure: 1,
