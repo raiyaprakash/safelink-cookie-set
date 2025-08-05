@@ -16,15 +16,16 @@ export async function onRequestGet(context) {
   }
 
   function setCookie(name, value, options = {}) {
-    let cookie = `${name}=${encodeURIComponent(value)}`;
-    if (options.expires) cookie += `; Expires=${options.expires.toUTCString()}`;
-    if (options.maxAge) cookie += `; Max-Age=${options.maxAge}`;
-    if (options.path) cookie += `; Path=${options.path}`;
-    if (options.httpOnly) cookie += `; HttpOnly`;
-    if (options.sameSite) cookie += `; SameSite=${options.sameSite}`;
-    if (options.secure) cookie += `; Secure`;
-    return cookie;
-  }
+  let cookie = `${name}=${encodeURIComponent(value)}`;
+  if (options.expires) cookie += `; Expires=${options.expires.toUTCString()}`;
+  if (options.maxAge) cookie += `; Max-Age=${options.maxAge}`;
+  if (options.path) cookie += `; Path=${options.path}`;
+  if (options.domain) cookie += `; Domain=${options.domain}`;
+  if (options.httpOnly) cookie += `; HttpOnly`;
+  if (options.sameSite) cookie += `; SameSite=${options.sameSite}`;
+  if (options.secure) cookie += `; Secure`;
+  return cookie;
+}
 
   function getRandomUrl() {
     const urls = [
@@ -63,11 +64,12 @@ export async function onRequestGet(context) {
 
       const keyName = searchParams.get('id');
       const page = searchParams.get('page') || 2;
+      const domain = ".pkptimes.com";
 
       const headers = new Headers();
-      headers.append("Set-Cookie", setCookie("user_id", keyName, { path: "/", maxAge: 600, secure: true, sameSite: "None" }));
-      headers.append("Set-Cookie", setCookie("page_is", page, { path: "/", maxAge: 600, secure: true, sameSite: "None" }));
-      headers.append("Set-Cookie", setCookie("upage_is", 0, { path: "/", maxAge: 600, secure: true, sameSite: "None" }));
+      headers.append("Set-Cookie", setCookie("user_id", keyName, { path: "/", maxAge: 600, secure: true, sameSite: "None", domain }));
+      headers.append("Set-Cookie", setCookie("page_is", page, { path: "/", maxAge: 600, secure: true, sameSite: "None", domain }));
+      headers.append("Set-Cookie", setCookie("upage_is", 0, { path: "/", maxAge: 600, secure: true, sameSite: "None", domain }));
       headers.set("Location", getRandomUrl());
 
       return new Response(null, {
