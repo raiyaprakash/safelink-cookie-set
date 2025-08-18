@@ -29,12 +29,12 @@ export async function onRequestGet(context) {
 
   function getRandomUrl() {
     const urls = [
-/*'https://www.pkptimes.com/union-bank-personal-loan/',
+'https://www.pkptimes.com/union-bank-personal-loan/',
 'https://www.pkptimes.com/bandhan-bank-personal-loan/',
 'https://www.pkptimes.com/idbi-bank-personal-loan/',
 'https://www.pkptimes.com/bank-of-baroda-personal-loan/',
-'https://www.pkptimes.com/pm-mudra-loan-yojana/',*/
-'https://www.pkptimes.com/',
+'https://www.pkptimes.com/pm-mudra-loan-yojana/',
+/*'https://www.pkptimes.com/',*/
     ];
     const randomIndex = Math.floor(Math.random() * urls.length);
     return urls[randomIndex];
