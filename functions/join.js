@@ -112,8 +112,10 @@ function timer(timeset) {
         if (!cookie_link_id.includes("f.sharelink")) {
             var next_target = 'https://r.sharelinks.in/link/?url=' + encodeURIComponent(cookie_link_id);
         }
+		   bpkc.set("footer_link", 1, {secure: 1,"max-age": 60,sameSite: "None"});
          window.parent.postMessage({ link: 'manual', content: next_target, scroll:'true' }, '*');
     } else {
+	bpkc.set("footer_link", 0, {secure: 1,"max-age": 60,sameSite: "None"});
       window.parent.postMessage({ link: 'random', content: 'auto', scroll:'true' }, '*');
     }
 }
@@ -148,6 +150,7 @@ function timer(timeset) {
             bpkc.set("upage_is", 1, cookieOptions);
             bpkc.set("page_is", 1, cookieOptions);
             bpkc.set("user_id", 1, cookieOptions);
+            bpkc.set("footer_link", 1, cookieOptions);
         }
 
     }
