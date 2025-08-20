@@ -29,11 +29,9 @@ export async function onRequestGet(context) {
 
   function getRandomUrl() {
     const urls = [
-'https://www.pkptimes.com/union-bank-personal-loan/',
-'https://www.pkptimes.com/bandhan-bank-personal-loan/',
-'https://www.pkptimes.com/idbi-bank-personal-loan/',
-'https://www.pkptimes.com/bank-of-baroda-personal-loan/',
-'https://www.pkptimes.com/pm-mudra-loan-yojana/',
+'https://www.pkptimes.com/2025/08/sbi-home-loan.html?m=1',
+'https://www.pkptimes.com/2025/08/sbi-multi-purpose-gold-loan.html?m=1',
+'https://www.pkptimes.com/2025/08/pm-mudra-loan-yojana.html?m=1',
 /*'https://www.pkptimes.com/',*/
     ];
     const randomIndex = Math.floor(Math.random() * urls.length);
