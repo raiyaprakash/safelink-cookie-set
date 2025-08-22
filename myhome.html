@@ -87,8 +87,9 @@ function runtimer() {
 }
 
 function savecookie() {
-    var cookie_step_id = Number(bpkc.get("upage_is"));
-    var next_status = cookie_step_id + 1;
+        var cookie_step_id = Number(bpkc.get("upage_is"));
+	var StepsToGo = Number(bpkc.get("page_is"));
+        var next_status = cookie_step_id + 1;
     bpkc.set("upage_is", next_status, {
         secure: 1,
         "max-age": 300,
@@ -109,8 +110,6 @@ sameSite: "None",
         bpkc.set("user_id", 1, cookieOptions);
     }
 }
-
-
 
 var cookie_link_id = bpkc.get("user_id");
 if (cookie_link_id) {
