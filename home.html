@@ -13,9 +13,8 @@
 const bpkc={get:e=>(e=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([.$?*|{}()[\]\\/+^])/g,"$1")+"=([^;]*)")))?decodeURIComponent(e[1]):void 0,set:(e,o,n={})=>{(n={path:"/",...n}).expires instanceof Date&&(n.expires=n.expires.toUTCString());let t=unescape(encodeURIComponent(e))+"="+unescape(encodeURIComponent(o));for(var c in n){t+="; "+c;var p=n[c];!0!==p&&(t+="="+p)}document.cookie=t}};
 
 
-    var cookie_link_id = bpkc.get("user_id");
     if(bpkc.get("user_id"))(
-       document.querySelector(".pkheader").innerHTML = `Click on the Below Link button (नीचे दिए गए लिंक बटन पर क्लिक करें)`;
+       document.querySelector(".pkheader").innerHTML = `Click on the Below Link button`;
     )
 
     </Script>
