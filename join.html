@@ -134,7 +134,7 @@ function myTimer() {
 
     var cookie_link_id = bpkc.get("footer_is");
     if (cookie_link_id) {
-        clearInterval(myInterval);bpkc.set("footer_is",0,{secure:1,"max-age":0,sameSite:"None"}),bpkc.set("footer_acive",0,{secure:1,"max-age":300,sameSite:"None"});
+        clearInterval(myInterval);bpkc.set("footer_is",0,{secure:1,"max-age":0,sameSite:"None"});
 
         var cookie_link_id = bpkc.get("user_id");
         var cookie_step_id = Number(bpkc.get("upage_is"));
@@ -158,6 +158,7 @@ function myTimer() {
                 content: 'auto',
                 scroll: 'true'
             }, '*');
+			bpkc.set("footer_acive",0,{secure:1,"max-age":300,sameSite:"None"});
         }
     }
 
