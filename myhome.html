@@ -104,6 +104,7 @@ sameSite: "None",
 
         domain: ".pkptimes.com"
     };
+    bpkc.set("footer_acive", 0, cookieOptions);
     if (cookie_step_id + 1 >= StepsToGo) {
         bpkc.set("upage_is", 1, cookieOptions);
         bpkc.set("page_is", 1, cookieOptions);
@@ -139,14 +140,7 @@ function myTimer() {
 
     var cookie_link_id = bpkc.get("footer_is");
     if (cookie_link_id) {
-        clearInterval(myInterval);
-        bpkc.set("footer_is", 0, {
-            secure: 1,
-            "max-age": 0,
-sameSite: "None",
-
-            domain: ".pkptimes.com"
-        });
+        clearInterval(myInterval);bpkc.set("footer_is",0,{secure:1,"max-age":0,sameSite:"None",domain:".pkptimes.com"}),bpkc.set("footer_acive",0,{secure:1,"max-age":300,sameSite:"None",domain:".pkptimes.com"});
 
         var cookie_link_id = bpkc.get("user_id");
         var cookie_step_id = Number(bpkc.get("upage_is"));
@@ -190,7 +184,10 @@ sameSite: "None",
     bindEvent(window, 'message', function (e) {
 
         if (e.data.footer === "click") {
+    var footer_acive = bpkc.get("footer_acive");
+    if (footer_acive) {
             savecookie()
+    }
         }
     });
 }
