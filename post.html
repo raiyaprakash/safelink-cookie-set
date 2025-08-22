@@ -4,11 +4,7 @@
           <title>Join Viewer</title>
           <meta charset="UTF-8" />
           <style>
-            body,p { font-family: Arial, sans-serif; margin: 0;padding: 0;}.pkclass{color:#00e;background:0 0;font-weight:700;cursor:pointer;text-align:center;margin: 0;padding: 0;line-height:normal}
-            .pkhy::before{content:attr(data-text)}.pkhy::after{content:attr(data-no);color:red}.pkhy,.pkhy::after,.pkhy::before{font-size:12px;margin:0;line-height:normal}.pkhy{background:#ffff98;text-align:center;font-weight:600}
-.entry-content{line-height:2;word-spacing:2px}.pkhy::before{content:attr(data-text)}.pkhy::after{content:attr(data-no);color:red}.pkhy,.pkhy::after,.pkhy::before{font-size:12px;margin:0;line-height:normal}.pkhy{background:#ffff98;text-align:center;font-weight:600}.tp-btn-2{font-size:12px;padding:0;color:#00e;background:0 0;font-weight:700;cursor:pointer;text-transform:uppercase;border: 0;}button.tp-btn-2:focus,button.tp-btn-2:hover{color:#222;background:0 0}.pkclass{text-align:center;margin:0;padding:0;line-height:normal}.pks-align{text-align:center;margin:10px auto;clear:both}
-          
-
+body,p{font-family:Arial,sans-serif;margin:0;padding:0}.pkclass{color:#00e;background:0 0;font-weight:700;cursor:pointer}.pkhy::before{content:attr(data-text)}.pkhy::after{content:attr(data-no);color:red}.pkhy,.pkhy::after,.pkhy::before{font-size:12px;margin:0;line-height:normal}.pkhy{background:#ffff98;text-align:center;font-weight:600;color:#000}.tp-btn-2{font-size:12px;padding:0;color:#00e;background:0 0;font-weight:700;cursor:pointer;text-transform:uppercase;border:0}button.tp-btn-2:focus,button.tp-btn-2:hover{color:#222;background:0 0}.pkclass{text-align:center;margin:0;padding:0;line-height:normal}.pks-align{text-align:center;margin:10px auto;clear:both}
 </style>
         </head>
         <body>
@@ -65,7 +61,6 @@ function timer(timeset) {
 
   }
 
-
 if (null != bpkc.get("user_id")) {
     var cookie_link_id = bpkc.get("user_id");
     var cookie_step_id = Number(bpkc.get("upage_is"));
@@ -78,11 +73,6 @@ if (null != bpkc.get("user_id")) {
         document.querySelector('.pkhinsert').innerHTML = `<div class="pkhy" data-text='You are ' data-no='${currentStep}'></div>`;
         pkheader.innerHTML = '<button id="nextbtn" class="tp-btn-2 tp-blue" onclick="runtimer()">Open</button>';
     }
-    const footerinsert = document.querySelector('.footerinsert');
-    if (footerinsert) {
-        footerinsert.innerHTML = '<ins class="adsbygoogle" data-ad-client="ca-pub-7512648770861868" data-ad-format="auto" data-ad-slot="2202878236" data-full-width-responsive="true" style="display:block"></ins>';
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    }
 
     function runtimer() {
     document.querySelector('.pkheader').innerHTML = '<button class="tp-btn-2 tp-blue">Wait... <span id="tp-time">10</span></button>';
@@ -90,7 +80,6 @@ if (null != bpkc.get("user_id")) {
 }
 
 }
-
     </Script>
         </body>
       </html>
