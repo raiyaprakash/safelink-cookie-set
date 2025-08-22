@@ -66,9 +66,9 @@ export async function onRequestGet(context) {
       const domain = ".pkptimes.com";
 
       const headers = new Headers();
-      headers.append("Set-Cookie", setCookie("user_id", keyName, { path: "/", maxAge: 300, secure: true, sameSite: "None", domain }));
-      headers.append("Set-Cookie", setCookie("page_is", page, { path: "/", maxAge: 300, secure: true, sameSite: "None", domain }));
-      headers.append("Set-Cookie", setCookie("upage_is", 0, { path: "/", maxAge: 300, secure: true, sameSite: "None", domain }));
+      headers.append("Set-Cookie", setCookie("user_id", keyName, { path: "/", maxAge: 300, secure: true, sameSite: "None" }));
+      headers.append("Set-Cookie", setCookie("page_is", page, { path: "/", maxAge: 300, secure: true, sameSite: "None" }));
+      headers.append("Set-Cookie", setCookie("upage_is", 0, { path: "/", maxAge: 300, secure: true, sameSite: "None" }));
       headers.set("Location", getRandomUrl());
 
       return new Response(null, {
