@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-      <html>
-        <head>
-          <title>Join Viewer</title>
-          <meta charset="UTF-8" />
-          <style>
-            body,p { font-family: Arial, sans-serif; margin: 0;padding: 0;}.pkclass{color:#00e;background:0 0;font-weight:700;cursor:pointer;text-align:center;margin: 0;padding: 0;line-height:normal}
-          </style>
-        </head>
-        <body>
-          <div class="pkheader pkclass">Join WhatsApp Group</div>
-            <Script>  
-const bpkc={get:e=>(e=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([.$?*|{}()[\]\\/+^])/g,"$1")+"=([^;]*)")))?decodeURIComponent(e[1]):void 0,set:(e,o,n={})=>{(n={path:"/",...n}).expires instanceof Date&&(n.expires=n.expires.toUTCString());let t=unescape(encodeURIComponent(e))+"="+unescape(encodeURIComponent(o));for(var c in n){t+="; "+c;var p=n[c];!0!==p&&(t+="="+p)}document.cookie=t}};
+<html dir='ltr' lang='en'>
 
+<head>
+    <meta charset='UTF-8' />
+    <meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport' />
+    <!--[if IE]><meta content='IE=edge; IE=9; IE=8; IE=7; chrome=1' http-equiv='X-UA-Compatible'/><![endif]-->
+    <title>Join Viewer</title>
+    <meta name="google" content="notranslate" />
+    <meta name="color-scheme" content="light"/>
+    <meta name="supported-color-schemes" content="light"/>
+    <meta content='noindex,nofollow' name='robots'/>
 
-var cookie_link_id = bpkc.get("user_id");
-
-if (cookie_link_id) {
-  document.querySelector(".pkheader").innerHTML = 
-    "Click on the Below Link button (नीचे दिए गए लिंक बटन पर क्लिक करें)";
-}
-
+    <style>:root{color-scheme:only light}.pkclass,body,p{margin:0;padding:0}body,p{font-family:Arial,sans-serif}.pkclass{color:#000;font-weight:700;cursor:pointer;text-align:center;line-height:normal}.pkclass span{color:red}
+    </style>
+</head>
+<body>
+    <div class="pkheader pkclass">Join WhatsApp Group</div>
+    <Script>
+        const bpkc={get:e=>(e=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([.$?*|{}()[\]\\/+^])/g,"$1")+"=([^;]*)")))?decodeURIComponent(e[1]):void 0,set:(e,o,n={})=>{(n={path:"/",...n}).expires instanceof Date&&(n.expires=n.expires.toUTCString());let t=unescape(encodeURIComponent(e))+"="+unescape(encodeURIComponent(o));for(var c in n){t+="; "+c;var p=n[c];!0!==p&&(t+="="+p)}document.cookie=t}};
+        
+        var cookie_link_id = bpkc.get("user_id");
+        if (cookie_link_id) {
+          document.querySelector(".pkheader").innerHTML = "<span>👇 Click on the Below Link button 👇</span>";
+        }
     </Script>
-        </body>
-      </html>
+</body>
+
+</html>
