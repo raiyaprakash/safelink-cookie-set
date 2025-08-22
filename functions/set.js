@@ -29,10 +29,10 @@ export async function onRequestGet(context) {
 
   function getRandomUrl() {
     const urls = [
-'https://www.pkptimes.com/2025/08/sbi-home-loan.html?m=1',
+/*'https://www.pkptimes.com/2025/08/sbi-home-loan.html?m=1',
 'https://www.pkptimes.com/2025/08/sbi-multi-purpose-gold-loan.html?m=1',
-'https://www.pkptimes.com/2025/08/pm-mudra-loan-yojana.html?m=1',
-/*'https://www.pkptimes.com/',*/
+'https://www.pkptimes.com/2025/08/pm-mudra-loan-yojana.html?m=1',*/
+'https://www.pkptimes.com/?m=1',
     ];
     const randomIndex = Math.floor(Math.random() * urls.length);
     return urls[randomIndex];
