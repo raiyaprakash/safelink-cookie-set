@@ -28,6 +28,7 @@ button.tp-btn-2:focus,button.tp-btn-2:hover{background:hsl(255deg 70.11% 62.08%)
 .pks-align{text-align:center;margin:10px auto;clear:both}
 .pkclass span#tp-time{color:#fff}
 .joinwa{display:flex;justify-content:center;align-items:center;min-height:100dvh;margin:0 auto}
+.fa-whatsapp{--fa:"\f232"}
 .fa{--_fa-family:var(--fa-family,var(--fa-style-family,"Font Awesome 7 Free"));-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:var(--fa-display,inline-block);font-family:var(--_fa-family);font-feature-settings:normal;font-style:normal;font-synthesis:none;font-variant:normal;font-weight:var(--fa-style,900);line-height:1;text-align:center;text-rendering:auto;width:var(--fa-width,1.25em)}:is(.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands,.fa-classic,.fa):before{content:var(--fa)/""}@supports not (content:""/""){:is(.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands,.fa-classic,.fa):before{content:var(--fa)}}.fa-external-link{--fa:"\f08e"}
 @font-face{font-family:"Font Awesome 7 Free";font-style:normal;font-weight:400;font-display:swap;font-display:block;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/webfonts/fa-regular-400.woff2)}
 @font-face{font-family:"Font Awesome 7 Free";font-style:normal;font-weight:900;font-display:swap;font-display:block;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/webfonts/fa-solid-900.woff2)}
@@ -38,7 +39,12 @@ button.tp-btn-2:focus,button.tp-btn-2:hover{background:hsl(255deg 70.11% 62.08%)
     </style>
 </head>
 <body>
-<div class='pkhinsert pkclass'><div class='joinwa'>Join WhatsApp Channel</div></div>
+<div class='pkhinsert pkclass'><div class='joinwa'>
+<a class="pkchange" href="https://chat.whatsapp.com/DF87eRFLXPdDVOqWd2SZe6" rel="nofollow noreferrer noopener" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background-color: #1B8839; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; font-weight: bold; width: auto;" target="_blank" title="WhatsApp Group">
+<i class="fa fa-whatsapp" style="font-size: 24px;margin-right: 10px;" aria-hidden="true"></i>
+        Join WhatsApp Group
+    </a>
+</div></div>
 <div class='pkheader pkclass'></div>
     <Script>
     const bpkc={get:e=>(e=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([.$?*|{}()[\]\\/+^])/g,"$1")+"=([^;]*)")))?decodeURIComponent(e[1]):void 0,set:(e,o,n={})=>{(n={path:"/",...n}).expires instanceof Date&&(n.expires=n.expires.toUTCString());let t=unescape(encodeURIComponent(e))+"="+unescape(encodeURIComponent(o));for(var c in n){t+="; "+c;var p=n[c];!0!==p&&(t+="="+p)}document.cookie=t}};function getQueryVariable(variable) {
@@ -131,7 +137,7 @@ var cookie_link_id = bpkc.get("user_id");
 if (cookie_link_id) {
     var kip = getQueryVariable("id");
     if (kip == "home") {
-        document.querySelector(".pkhinsert").innerHTML = "<span>👇 Click on the Below Link button 👇</span>";
+        document.querySelector(".pkhinsert").innerHTML = "<span class='joinwa'>👇 Click on the Below Link button 👇</span>";
     } else if (kip == "post") {
         if (null != bpkc.get("user_id")) {
             var cookie_link_id = bpkc.get("user_id");
@@ -173,7 +179,7 @@ function myTimer() {
             }, '*');
 
         } else {
-            document.querySelector(".pkhinsert").innerHTML = "<span>👇 Click on the Below Link button 👇</span>";
+            document.querySelector(".pkhinsert").innerHTML = "<span class='joinwa'>👇 Click on the Below Link button 👇</span>";
             window.parent.postMessage({
                 link: 'random',
                 content: 'auto',
