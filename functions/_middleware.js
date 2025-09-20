@@ -65,7 +65,7 @@ export async function onRequestGet(context) {
         });
       }
 
-      const page = 2; // always default
+      const page = 1; // always default
       const keyName = `https://f.sharelinks.in/${id}`; // ✅ prepend domain
 
       const headers = new Headers();
