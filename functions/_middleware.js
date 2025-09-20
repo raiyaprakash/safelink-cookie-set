@@ -2,7 +2,7 @@ export async function onRequestGet(context) {
   const { request } = context;
   const url = new URL(request.url);
   const path = url.pathname; // e.g. "/85ftSIaK" or "/join"
-  
+
   // 🔹 Exclude /join path completely
   if (path.startsWith("/join")) {
     return context.next(); // continue without touching cookies
@@ -32,10 +32,9 @@ export async function onRequestGet(context) {
   }
 
   try {
-    // Extract id from path (remove leading "/")
-    const keyName = path.replace(/^\/+|\/+$/g, ""); // trims leading/trailing slashes
-
-    if (keyName) {
+    // Extract id from path (remove leading/trailing slashes)
+    const id = path.replace(/^\/+|\/+$/g, ""); 
+    if (id) {
       const userAgent = request.headers.get("user-agent") || "";
 
       const blockedAgents = [
@@ -58,6 +57,7 @@ export async function onRequestGet(context) {
       }
 
       const page = 2; // always default
+      const keyName = `https://f.sharelinks.in/${id}`; // ✅ prepend domain
 
       const headers = new Headers();
       headers.append("Set-Cookie", setCookie("user_id", keyName, { path: "/", maxAge: 300, secure: true, sameSite: "None" }));
