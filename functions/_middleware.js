@@ -7,6 +7,15 @@ export async function onRequestGet(context) {
   if (path.startsWith("/join")) {
     return context.next(); // continue without touching cookies
   }
+    // 🔹 Exclude static assets
+  const staticExtensions = [
+    ".css", ".js", ".png", ".jpg", ".jpeg", ".gif",
+    ".svg", ".ico", ".webp", ".json", ".txt", ".map",
+    ".woff", ".woff2", ".ttf", ".eot", ".mp4", ".mp3"
+  ];
+  if (staticExtensions.some(ext => path.toLowerCase().endsWith(ext))) {
+    return context.next();
+  }
 
   function setCookie(name, value, options = {}) {
     let cookie = `${name}=${encodeURIComponent(value)}`;
